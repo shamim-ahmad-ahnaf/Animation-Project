@@ -4,9 +4,12 @@ import Button from "./Button";
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const menuItems = ["Home", "Work", "Culture", "", "News"];
+
   return (
     <div className="flex items-center w-full max-w-screen-xl py-6 mx-auto">
       <div className="flex items-center justify-between w-full px-4">
+        {/* Logo and Navigation */}
         <div className="flex items-center gap-6 md:gap-14">
           <img
             src="https://cdn.prod.website-files.com/63b386e70e89095e936cc9c2/63bddf6c495c16eebdb45576_Refokus-w.svg"
@@ -14,7 +17,7 @@ export default function Navbar() {
             className="h-8"
           />
           <div className="items-center hidden gap-6 font-semibold text-white md:flex">
-            {["Home", "Work", "Culture", "", "News"].map((elem, index) =>
+            {menuItems.map((elem, index) =>
               elem.length === 0 ? (
                 <span
                   key={`divider-${index}`}
@@ -38,12 +41,15 @@ export default function Navbar() {
             )}
           </div>
         </div>
+
+        {/* Button Component */}
         <Button />
+
+        {/* Mobile Menu Toggle */}
         <button
           className="text-white md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {/* Hamburger Icon */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6"
@@ -55,7 +61,11 @@ export default function Navbar() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} // Change icon based on menu state
+              d={
+                isMobileMenuOpen
+                  ? "M6 18L18 6M6 6l12 12"
+                  : "M4 6h16M4 12h16M4 18h16"
+              }
             />
           </svg>
         </button>
@@ -64,8 +74,8 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-60">
-          <div className="relative flex flex-col items-center w-4/5 max-w-xs gap-6 p-6 transition-all duration-300 ease-in-out transform rounded-lg shadow-lg bg-zinc-800">
-            {["Home", "Work", "Culture", "", "News"].map((elem, index) =>
+          <div className="relative flex flex-col items-center w-4/5 max-w-xs gap-6 p-6 rounded-lg shadow-lg bg-zinc-800">
+            {menuItems.map((elem, index) =>
               elem.length === 0 ? (
                 <span
                   key={`divider-${index}`}
@@ -87,10 +97,9 @@ export default function Navbar() {
                 </a>
               )
             )}
-            {/* Close Button */}
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="absolute text-3xl font-bold text-white transition-all duration-300 top-1 right-2 hover:text-green-500"
+              className="absolute text-3xl font-bold text-white top-1 right-2 hover:text-green-500"
             >
               &times;
             </button>

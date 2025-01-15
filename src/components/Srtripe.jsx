@@ -2,9 +2,11 @@ import React from 'react';
 
 export default function Srtripe({ val }) {
   return (
-    <div className="flex items-center justify-between px-4 py-2 border-t-2 border-b-2 border-zinc-700 rounded w-[180px] sm:w-[220px] lg:w-[250px]">
-      <img src={val.url} alt="" className="object-contain w-20 h-8 filter invert" />
-      <span className="font-semibold">{val.number}</span>
-    </div>
+    <a href={val.link} target="_blank" rel="noopener noreferrer">
+      <div className="flex items-center justify-between px-6 py-4 transition duration-300 transform border-t-2 border-b-2 border-gray-300 rounded-lg shadow-lg cursor-pointer hover:scale-105 hover:shadow-xl hover:bg-gray-700">
+        <img src={val.url} alt="" className="object-contain w-16 h-8 filter invert" />
+        <span className="text-xl font-semibold text-white">{val.number}</span>
+      </div>
+    </a>
   );
 }

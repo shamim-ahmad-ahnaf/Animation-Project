@@ -4,9 +4,9 @@ import { BsArrowRightCircleFill } from "react-icons/bs";
 export default function Card({ width, start, para, hover }) {
     return (
         <div
-            className={`p-5 rounded-xl bg-zinc-800 hover:${hover} ${width} min-h-[30rem] flex flex-col justify-between`}
+            className={`p-5 rounded-xl  bg-gray-700 hover:bg-violet-600 ${width} min-h-[30rem] flex flex-col justify-between`}
         >
-            {/* Upper Section */}
+          
             <div className='w-full'>
                 <div className='flex items-center justify-between w-full'>
                     <h2 className='text-base font-medium md:text-lg'>Up Next: Culture</h2>
@@ -17,7 +17,7 @@ export default function Card({ width, start, para, hover }) {
                 </h1>
             </div>
 
-            {/* Lower Section */}
+        
             <div className='w-full'>
                 {start && (
                     <>

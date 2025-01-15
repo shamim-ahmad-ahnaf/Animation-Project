@@ -78,9 +78,9 @@ export default function Work() {
   });
 
   return (
-    <div className="w-full mt-10">
+    <div className="w-full bg-gray-900 pb-28 pt-36">
       <div className="relative w-11/12 max-w-screen-xl mx-auto text-center">
-        <h1 className="text-[30vw] leading-none font-medium tracking-tight select-none">Work</h1>
+        <h1 className="text-[30vw] leading-none font-bold tracking-tight select-none text-yellow-600">Work</h1>
 
         <div className="absolute top-0 w-full h-full">
           {image.map(
